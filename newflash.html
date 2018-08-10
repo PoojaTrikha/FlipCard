@@ -9,19 +9,23 @@
     <script src="./main.js"></script>
 </head>
 <body>
-    <h1 style="margin-left:600px; margin-top:50px">New Flash by the End User</h1><br>
-  
+    <h1 style="margin-left:700px; margin-top:50px">New Flash by the End User</h1><br>
+    <button onclick="goBack()">Go Back</button>
     
     <div class = "Card-box">
      <h1 id ="Ques" onclick ="changeText()"></h1>
     </div>
     
     <div>
-    <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
-    <button id="btn" type="button" onclick='getInput()'>Make your own flashcard</button>
+    <button style ="margin-right:100px" id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
+    <button style ="margin-right:100px" id="btn" type="button" onclick='getInput()'>Make your own flashcard</button>
     </div>
     <script>
-    
+        
+    function goBack() {
+    window.history.back();
+    }
+     
     var questions = ["HTML","CSS","ABC"];
     
     var userInputAnswer
