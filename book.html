@@ -6,23 +6,12 @@
     <title><Page Title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style.css">
-    <link src ="./book.html">
     <script src="./main.js"></script>
 </head>
 <body>
-
-    <h1 style="margin-left:800px; margin-top:50px">Programming</h1><br>
-   
-    <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-              <div id="myDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                <a href="./index.html">Programming</a>
-                <a href="./book.html">Books</a>
-            </div>
-    
-    </div>
-    
+    <button onclick="goBack()">Go Back</button>
+    <h1 style="margin-left:750px; margin-top:50px">BOOK AND AUTHOR</h1><br>
+          
     <div class = "Card-box">
     <h1 id ="Ques" onclick ="changeText(this)"></h1>
     </div>
@@ -32,11 +21,13 @@
     <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
     </div>
     <script>
-    
+    function goBack() {
+    window.history.back();
+    }
        
     function  getcards(id)
     {
-        var questions = ["HTML","CSS","JavaScript"];
+        var questions = ["Letting go","2 States","1984"];
         var random = Math.floor(Math.random()*(questions.length)) // randpm question
            
         switch(random)
@@ -45,7 +36,7 @@
                 document.getElementById("Ques").innerHTML = questions[random];
                 document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Hyper text markup ";
+                return document.getElementById("Ques").innerHTML = "Philip Roth ";
                 }
             }
                 break;
@@ -53,7 +44,7 @@
                  document.getElementById("Ques").innerHTML = questions[random];
                 document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Programming language";
+                return document.getElementById("Ques").innerHTML = "Chetan Bhagat";
                 }
             }
                  break;
@@ -61,7 +52,7 @@
                  document.getElementById("Ques").innerHTML = questions[random];
                  document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Web Technologies";
+                return document.getElementById("Ques").innerHTML = "George Orwell";
                 }
             }
                  break;
@@ -69,25 +60,6 @@
             break;
         }
     }
-
-    function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-           var input, filter, ul, li, a, i;
-           input = document.getElementById("myInput");
-           filter = input.value.toUpperCase();
-           iv = document.getElementById("myDropdown");
-           a = div.getElementsByTagName("a");
-             for (i = 0; i < a.length; i++) {
-                  if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                      a[i].style.display = "";
-                } else {
-                      a[i].style.display = "none";
-         }
-    }
-}
    
     </script>
     </body>
