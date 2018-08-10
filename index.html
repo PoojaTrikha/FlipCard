@@ -13,69 +13,60 @@
    
     
     <div class = "Card-box">
-
-        
+    
      <h1 id ="Ques" onclick ="changeText(this)"></h1>
      
     </div>
     
-}
+
     <div>
     <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
     </div>
     <script>
     
        
-
     function  getcards(id)
-    {   
-        
-        var questions = ["HTML","CSS","ABC"];
-        var random = Math.floor(Math.random()*(questions.length))} // randpm question
-
-        var questions = [{
+    {
+        var questions = ["HTML","CSS","JavaScript"];
+        var random = Math.floor(Math.random()*(questions.length)) // randpm question
+        /*var questions = [{
             question: 'What is life',
             answer: 'to fix bugs'
         }]
-
-        document.getElementById("Ques").innerHTML = questions[random]
+        document.getElementById("Ques").innerHTML = questions[random] */
     
         switch(random)
         {
             case 0: { 
-                document.getElementById("Ques").innerHTML = "HTML";
+                document.getElementById("Ques").innerHTML = questions[random];
                 document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Test";
+                return document.getElementById("Ques").innerHTML = "Hyper text markup ";
                 }
             }
                 break;
-
             case 1: { 
-                 document.getElementById("Ques").innerHTML = "CSS";
+                 document.getElementById("Ques").innerHTML = questions[random];
                 document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Test1";
+                return document.getElementById("Ques").innerHTML = "Programming language";
                 }
             }
                  break;
-
             case 2: { 
-                 document.getElementById("Ques").innerHTML = "ABC";
+                 document.getElementById("Ques").innerHTML = questions[random];
                  document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
-                return document.getElementById("Ques").innerHTML = "Test2";
+                return document.getElementById("Ques").innerHTML = "Web Technologies";
                 }
             }
                  break;
-
             default:
             break;
-
-
         }
     }
-    
+
+   
     </script>
-</body>
-</html>
+    </body>
+    </html>
