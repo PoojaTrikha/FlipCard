@@ -14,10 +14,9 @@
     
     <div class = "Card-box">
 
-    
-    <h1 id ="Ques"></h1>
-   <!--- <h1 id ="Ques"onclick ="changeText(this)"></h1> -->
-    
+        
+     <h1 id ="Ques" onclick ="changeText(this)"></h1>
+     
     </div>
     
     
@@ -25,26 +24,43 @@
     <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
     </div>
     <script>
+    
+   
+    
+
+    
+
     function  getcards(id)
     {   
         var questions = ["HTML","CSS","ABC"];
         var random = Math.floor(Math.random()*(questions.length))
-       
+    
+      
         switch(random)
         {
             case 0: 
                 document.getElementById("Ques").innerHTML = "HTML";
+                document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test";
+                }
                 break;
 
             case 1: 
                  document.getElementById("Ques").innerHTML = "CSS";
+                 document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test1";
+                }
                  break;
 
             case 2: 
-          //  var question = document.createTextNode("ABC");
-           // document.getElementById("Ques").appendChild(question);
-           document.getElementById("Ques").innerHTML = "ABC";
-            break;
+                 document.getElementById("Ques").innerHTML = "ABC";
+                 document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test2";
+                }
+                 break;
 
             default:
             break;
