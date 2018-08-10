@@ -1,0 +1,20 @@
+
+.Card-box {
+    margin-left: 700px;
+    margin-top:200px;
+    height: 200px;
+    width: 20%;
+    background-color: powderblue;
+}
+
+#Ques
+{
+    text-align: center;
+    padding:80px;
+}
+
+#Button-Style
+{
+    margin-left: 850px;
+    margin-top:100px;
+}

@@ -5,15 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><Page Title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
 </head>
 <body>
-    <h1 style="margin-left:800px;">Flip Cards</h1>
-    <script>
-    var cart = [];
+    <h1 style="margin-left:800px;">FLIP CARD</h1><br>
+    <h2>Click the card to flip it the other way.</h2>
+    
+    <div class = "Card-box">
 
-    var item = {name:"Apple",cost:1.99,count:3};
+    
+    <h1 id ="Ques"></h1>
+   <!--- <h1 id ="Ques"onclick ="changeText(this)"></h1> -->
+    
+    </div>
+    
+    
+    <div>
+    <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
+    </div>
+    <script>
+    function  getcards(id)
+    {   
+        var questions = ["HTML","CSS","ABC"];
+        var random = Math.floor(Math.random()*(questions.length))
+       
+        switch(random)
+        {
+            case 0: 
+                document.getElementById("Ques").innerHTML = "HTML";
+                break;
+
+            case 1: 
+                 document.getElementById("Ques").innerHTML = "CSS";
+                 break;
+
+            case 2: 
+          //  var question = document.createTextNode("ABC");
+           // document.getElementById("Ques").appendChild(question);
+           document.getElementById("Ques").innerHTML = "ABC";
+            break;
+
+            default:
+            break;
+
+
+        }
+    }
     
     </script>
 </body>
