@@ -9,8 +9,8 @@
     <script src="./main.js"></script>
 </head>
 <body>
-    <h1 style="margin-left:800px;">FLIP CARD</h1><br>
-    <h2>Click the card to flip it the other way.</h2>
+    <h1 style="margin-left:800px; margin-top:50px">FLIP CARD</h1><br>
+   
     
     <div class = "Card-box">
 
@@ -19,47 +19,54 @@
      
     </div>
     
-    
+}
     <div>
     <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
     </div>
     <script>
     
-   
-    
-
-    
+       
 
     function  getcards(id)
     {   
+        
         var questions = ["HTML","CSS","ABC"];
-        var random = Math.floor(Math.random()*(questions.length))
+        var random = Math.floor(Math.random()*(questions.length))} // randpm question
+
+        var questions = [{
+            question: 'What is life',
+            answer: 'to fix bugs'
+        }]
+
+        document.getElementById("Ques").innerHTML = questions[random]
     
-      
         switch(random)
         {
-            case 0: 
+            case 0: { 
                 document.getElementById("Ques").innerHTML = "HTML";
                 document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
                 return document.getElementById("Ques").innerHTML = "Test";
                 }
+            }
                 break;
 
-            case 1: 
+            case 1: { 
                  document.getElementById("Ques").innerHTML = "CSS";
-                 document.getElementById("Ques").addEventListener("click", changeText);
+                document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
                 return document.getElementById("Ques").innerHTML = "Test1";
                 }
+            }
                  break;
 
-            case 2: 
+            case 2: { 
                  document.getElementById("Ques").innerHTML = "ABC";
                  document.getElementById("Ques").addEventListener("click", changeText);
                 function changeText() {
                 return document.getElementById("Ques").innerHTML = "Test2";
                 }
+            }
                  break;
 
             default:
