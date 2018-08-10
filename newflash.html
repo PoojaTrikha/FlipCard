@@ -3,36 +3,86 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title><Page Title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
 </head>
 <body>
-       
-        <div class = "Card-box">
-            <h1 id ="Ques" onclick ="NewArray(this)"></h1>
-        </div>
-        <button onclick="goBack()">Go Back</button>
-        <script>
-             function goBack() {
-               window.history.back();
-              }
-        
-                 
-    function  NewArray(id){
-        
-       var inputArray = [];
-       var size = 5; //Maximum Array size
-       for(var i=0; i<size; i++) {
-		//Taking Input from user
-	   inputArray[i] = prompt('Enter five Element ' + (i+1));
-      }
-      //Print the array in the console.
-     console.log(inputArray);
-   }
+    <h1 style="margin-left:600px; margin-top:50px">New Flash by the End User</h1><br>
+  
+    
+    <div class = "Card-box">
+     <h1 id ="Ques" onclick ="changeText()"></h1>
+    </div>
+    
+    <div>
+    <button id="Button-Style" type="button" onclick='getcards(this)'>New flashcard</button>
+    <button id="btn" type="button" onclick='getInput()'>Make your own flashcard</button>
+    </div>
+    <script>
+    
+    var questions = ["HTML","CSS","ABC"];
+    
+    var userInputAnswer
+    var userInputQuestion
 
-NewArray();
- </script>
+    function getInput(){
+        userInputQuestion = window.prompt("Add your question here");
+        userInputAnswer = window.prompt("Add your answer here");
+        questions.push(userInputQuestion)
+    };
+
+    function  getcards(id){
+        var random = Math.floor(Math.random()*(questions.length))
+        console.log(random);
+         
+            switch(random)
+        {
+            case 0: { 
+                document.getElementById("Ques").innerHTML = "HTML";
+                document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test";
+                }
+            }
+                break;
+
+            case 1: { 
+                document.getElementById("Ques").innerHTML = "CSS";
+                document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test1";
+                }
+            }
+                 break;
+
+            case 2: { 
+                document.getElementById("Ques").innerHTML = "ABC";
+                document.getElementById("Ques").addEventListener("click", changeText);
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = "Test2";
+                }
+            }
+                break
+            case 3: { 
+                console.log(userInputQuestion);
+                
+                document.getElementById("Ques").innerHTML = userInputQuestion;
+                function changeText() {
+                return document.getElementById("Ques").innerHTML = userInputAnswer;
+                }
+                document.getElementById("Ques").addEventListener("click", changeText);
+                
+            }
+                 break;
+
+            default:
+                break;
+
+
+        }
+    }
+    </script>
 </body>
 </html>
